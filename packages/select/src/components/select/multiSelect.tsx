@@ -41,7 +41,7 @@ export class MultiSelect<T> extends React.PureComponent<IMultiSelectProps<T>, IM
         return MultiSelect as new (props: IMultiSelectProps<T>) => MultiSelect<T>;
     }
 
-    public state: IMultiSelectState = { isOpen: false };
+    public state: IMultiSelectState = { isOpen: (this.props.popoverProps && this.props.popoverProps.isOpen) || false };
 
     private TypedQueryList = QueryList.ofType<T>();
     private input?: HTMLInputElement | null;
